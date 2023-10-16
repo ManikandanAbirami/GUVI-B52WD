@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let obj = { name: "Manikandan", age: 32, designation: "PM" };
+      for (let key in obj) {
+        console.log(obj[key]);
+      }
+
+      let cars = [
+        "swift",
+        "rapid",
+        "rolls royce",
+        "bently",
+        "audi",
+        "mini cooper",
+      ];
+
+      for (let car of cars) {
+        console.log(car);
+      }
+
+      //   for (let car of cars) {
+      //     if (car === "audi") {
+      //       console.log(car + " diesel");
+      //     } else {
+      //       console.log(car + " petrol");
+      //     }
+      //   }
+      let i = 0;
+      let j = 0;
+      while (i < 5) {
+        console.log(i);
+        i++;
+      }
+
+      do {
+        console.log("do while:", j);
+        j++;
+      } while (j < 5);
+    </script>
+  </body>
+</html>

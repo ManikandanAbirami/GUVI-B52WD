@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var xhr = new XMLHttpRequest();
+
+      xhr.open("GET", "https://restcountries.com/v3.1/all");
+
+      xhr.send();
+
+      xhr.onload = function () {
+        let countryDetails = JSON.parse(xhr.responseText);
+        console.log(countryDetails);
+        console.log(countryDetails.map((country) => country.flag));
+        console.log(countryDetails.map((country) => country.name.official));
+      };
+    </script>
+  </body>
+</html>

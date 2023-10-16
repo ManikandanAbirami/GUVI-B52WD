@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let name = "Manikandan";
+      const obj = {
+        name: "Guvi",
+        greet: () => {
+          console.log("outer:", this.name);
+          let print = function () {
+            console.log("inner:", this.name);
+          };
+          print();
+        },
+      };
+      obj.greet();
+    </script>
+  </body>
+</html>

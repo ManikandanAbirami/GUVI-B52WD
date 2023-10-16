@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        margin: 5px;
+      }
+      .item1 {
+        position: static;
+        background-color: aqua;
+        border: 1px solid;
+      }
+      .item2 {
+        background-color: blue;
+        border: 1px solid;
+        color: aliceblue;
+      }
+      .item3 {
+        background-color: cadetblue;
+        border: 1px solid;
+        color: aliceblue;
+      }
+      .item4 {
+        background-color: darkgoldenrod;
+        border: 1px solid;
+      }
+      .item5 {
+        background-color: violet;
+        border: 1px solid;
+        color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="item1">
+        Static - Default. Elements are positioned according to the normal flow
+        of the document.
+      </div>
+      <div class="item2">
+        Relative - The Element is positioned relative to its normal position in
+        the document flow.
+      </div>
+      <div class="item3">
+        <ul>
+          <li>
+            Absolute - The element is removed from the normal document flow, and
+            no space is created for the element in the page layout.
+          </li>
+          <li>
+            Its positioned relative to its closest positioned ancestor(ancertor
+            position value other than 'static')
+          </li>
+        </ul>
+      </div>
+      <div class="item4">
+        <ul>
+          <li>
+            Fixed - The element is removed from the normal document flow, and no
+            space is created for the element in the page layout.
+          </li>
+          <li>
+            Its positioned relative to the viewport, it will stay in the same
+            place even if the page is scrolled.
+          </li>
+        </ul>
+      </div>
+      <div class="item5">
+        Sticky - It is a hybrid of 'relative' and 'fixed'. The element is
+        treated as 'relative' positioned until it crosses a specified threshold,
+        at which point it is treated as 'fixed'
+      </div>
+    </div>
+  </body>
+</html>

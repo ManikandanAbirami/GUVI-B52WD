@@ -1,0 +1,38 @@
+p {
+    font-size: 1.75rem;
+    margin: 1.5rem;
+    padding: 1rem;
+    border: 2px solid black;
+}
+
+body > p {
+    background-color: lightblue;
+}
+
+section {
+    position: relative;
+}
+
+#box {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    width: 15rem;
+    height: 10rem;
+    border: 2px solid black;
+    background-color: lightcoral;
+}
+
+#long {
+    background-color: lightyellow;
+}
+
+#test {
+    font-size: 4rem;
+}
+body {
+    font-size: 30px;
+}
+html {
+    font-size: 20px;
+}

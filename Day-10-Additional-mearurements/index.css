@@ -1,0 +1,28 @@
+p {
+    width: 50ch;
+}
+
+#parent {
+    width:75%;
+    border: 2px solid black;
+}
+
+#red {
+    width: 50%;
+    background-color: red;
+}
+
+#blue {
+    width: 50vw;
+    background-color: blue;
+}
+
+#green {
+    width: 10rem;
+    background-color: green;
+}
+
+div {
+    margin: 10px;
+    color: white;
+}

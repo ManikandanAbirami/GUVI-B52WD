@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Day 6 - OOP in JavaScript</h1>
+    <ol>
+      <li>Prototype</li>
+      <li>Classes</li>
+      <li>Constructor</li>
+      <li>Template Literals</li>
+    </ol>
+    <script>
+      //   class Animal {
+      //     constructor() {
+      //       console.log("Constructor method!!!");
+      //     }
+      //     moves = true;
+      //     message() {
+      //       console.log("Animal class!!!");
+      //     }
+      //   }
+
+      //   const animal = new Animal();
+
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        greet() {
+          console.log(
+            `Hello, my name is ${this.name} and I am ${this.age} years old.`
+          );
+        }
+      }
+
+      const person1 = new Person("Guvi", 10);
+      const person2 = new Person("Manikandan A", 32);
+      person1.greet();
+      person2.greet();
+    </script>
+  </body>
+</html>

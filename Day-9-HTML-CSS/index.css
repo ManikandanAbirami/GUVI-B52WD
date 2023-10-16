@@ -1,0 +1,30 @@
+.main {
+    margin: 10px;
+    padding: 5px;
+    border: 2px dotted red;
+    display: inline;
+}
+
+.sub {
+    display: block;
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid;
+}
+
+#firstName {
+    background-color: aquamarine;
+}
+
+#lastName {
+    background-color: yellow;
+}
+
+#degree {
+    background-color: rgb(181, 166, 236);
+}
+
+#designation {
+    background-color: rgb(243, 152, 134);
+    color: red;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Day 6 - OOP in JavaScript</h1>
+    <ol>
+      <li>Prototype</li>
+      <li>Classes</li>
+      <li>Constructor</li>
+      <li>Template Literals</li>
+    </ol>
+    <script>
+      let animal = {
+        moves: true,
+        eats: true,
+        sleep: true,
+      };
+      let rabbit = {
+        jump: true,
+      };
+      let lion = {
+        kills: true,
+      };
+
+      rabbit.__proto__ = animal;
+
+      console.log("Rabbit Eats:", rabbit.eats);
+      console.log("Rabbit Moves:", rabbit.moves);
+
+      console.log("Animal Eats:", animal.eats);
+      console.log("Animal Moves:", animal.moves);
+
+      let firstName = "Manikandan";
+      let lastName = "Anbalagan";
+      let age = 32;
+      let education = "BE CS";
+
+      console.log(
+        "My name is",
+        firstName + " " + lastName + " and my age is",
+        age + ". My education qualification is",
+        education + "."
+      );
+
+      console.log(
+        `My name is ${firstName} ${lastName} and my age is ${age}. My education qualification is ${education}.`
+      );
+    </script>
+  </body>
+</html>

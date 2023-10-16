@@ -1,0 +1,34 @@
+button{
+    background-color: blue;
+}
+
+button:hover{
+    background-color: coral;
+    padding: 10px;
+}
+span{
+    display: block;
+    border: 1px solid;
+    padding: 10px;
+    margin: 5px;
+}
+
+span:nth-child(even) {
+    background-color: lightgrey;
+}
+
+span:nth-child(odd):active {
+    background-color: burlywood;
+}
+
+p::first-line{
+    font-weight: bold;
+}
+
+div::after{
+    content: "Example";
+    color: red;
+}
+a:visited{
+    color: red;
+}
