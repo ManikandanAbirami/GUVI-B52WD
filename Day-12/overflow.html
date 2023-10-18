@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overflow Example!</title>
+    <style>
+      .container {
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        overflow-y: hidden;
+      }
+      .content {
+        width: 300px;
+        height: 300px;
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        This is some content that will overflow the container if the overflow
+        property is set to 'hidden'.
+      </div>
+    </div>
+  </body>
+</html>
