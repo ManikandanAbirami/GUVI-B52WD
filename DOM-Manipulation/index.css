@@ -1,0 +1,77 @@
+body {
+    background-color: orange;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#todo {
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    border-radius: 8px;
+}
+
+#taskInput {
+    /* width: 100%; */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#btnDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#addTask {
+    width: 28%;
+    margin-left: 0px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #007BFF;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 4px;
+}
+
+#addTask:hover {
+    background-color: #0056b3;
+}
+
+#taskList li {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: cadetblue;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#taskList li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#taskList li button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#taskList li button:hover {
+    background-color: #b02a37;
+}
+
+#taskList li.completed {
+    background-color: #d4edda;
+    text-decoration: line-through;
+}
+
