@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Micro Tasks!</title>
+  </head>
+  <body>
+    <form id="form">
+        <input type="text" id="user" placeholder="Username" required>
+        <input type="text" id="pwd" placeholder="Password" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="change">Hover over me!</div>
+    <span id="display"></span>
+    <p>
+        <h1>Click me!!</h1>
+        <span id="mc"></span>
+    </p>
+    <textarea id="txt" cols="30" rows="10"></textarea>
+    <div>Character Count: <span id="count">0</span></div>
+
+    <button id="enterFullScreen">Enter Full Screen</button>
+    <button id="exitFullScreen">Exit Full Screen</button>
+
+    <div id="edit" contenteditable="false">Hover over me to edit!!</div>
+  </body>
+  <script src="script.js"></script>
+</html>

@@ -2,6 +2,9 @@ const taskInput = document.getElementById("taskInput");
 const addTask = document.getElementById("addTask");
 const taskList = document.getElementById("taskList");
 
+// Load tasks from localStorage when the page loads
+loadTasksFromLocalStorage();
+
 addTask.addEventListener("click", function () {
   const taskValue = taskInput.value.trim();
 
@@ -24,40 +27,75 @@ addTask.addEventListener("click", function () {
       } else {
         li.classList.remove("completed");
       }
+      // saveTasksToLocalStorage(); // Save tasks to localStorage when checkbox state changes
     });
 
     deleteBtn.addEventListener("click", function () {
       console.log("delete button clicked!!!", li);
       taskList.removeChild(li);
+      // saveTasksToLocalStorage(); // Save tasks to localStorage when a task is deleted
     });
 
     taskList.appendChild(li);
 
-    saveToSessionStorage("task", taskInput.value);
-    const task = getFromSessionStorage("task");
-    console.log("$$$$$$$$$$$$", task);
+    saveTasksToLocalStorage(); // Save tasks to localStorage when a new task is added
 
     taskInput.value = "";
-    // let age = prompt("How old are you?", 100);
-    // alert(`You are ${age} years old!!`);
-
-    // let isInstructor = confirm("Are you the instructor?");
-    // alert(isInstructor);
   }
 });
 
-//setTimeOut(() => { // }, time);
-
-function saveToSessionStorage(key, value) {
-  sessionStorage.setItem(key, JSON.stringify(value));
-  setTimeout(() => {
-    console.log("Data saved to session storage.");
-  }, 4000);
-  setInterval(() => {
-    console.log("Data saved to session storage.");
-  }, 4000);
+// Save tasks to localStorage
+function saveTasksToLocalStorage() {
+  debugger;
+  const tasks = Array.from(taskList.children).map((li) => {
+    const textElement = li.querySelector("input[type='checkbox']").nextSibling; // Get the text node next to the checkbox
+    return {
+      text: textElement.textContent,
+      completed: li.querySelector("input[type='checkbox']").checked,
+    };
+  });
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-function getFromSessionStorage(key) {
-  return sessionStorage.getItem(key);
+// Load tasks from localStorage when the page loads
+function loadTasksFromLocalStorage() {
+  const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  for (const task of savedTasks) {
+    createTaskElement(task);
+  }
+}
+// Create task elements based on the saved tasks
+function createTaskElement(task) {
+  const li = document.createElement("li");
+  const checkbox = document.createElement("input");
+  const deleteBtn = document.createElement("button");
+
+  checkbox.type = "checkbox";
+  checkbox.checked = task.completed;
+  deleteBtn.innerText = "Delete";
+
+  li.appendChild(checkbox);
+  li.appendChild(document.createTextNode(task.text));
+  li.appendChild(deleteBtn);
+
+  if (task.completed) {
+    li.classList.add("completed");
+  }
+
+  checkbox.addEventListener("change", function () {
+    if (this.checked) {
+      li.classList.add("completed");
+    } else {
+      li.classList.remove("completed");
+    }
+    saveTasksToLocalStorage();
+  });
+
+  deleteBtn.addEventListener("click", function () {
+    console.log("delete button clicked!!!", li);
+    taskList.removeChild(li);
+    saveTasksToLocalStorage();
+  });
+
+  taskList.appendChild(li);
 }
