@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Programming Day - 1</title>
+  </head>
+  <body>
+    <h1>Async Programming Day - 1</h1>
+    <h2>Topics covered today:</h2>
+    <ol>
+      <li>Callback</li>
+      <li>What's the callback? - call stack, web API, event loop, queue</li>
+      <li>Use & its purpose of the callback</li>
+      <li>Pain of callback</li>
+    </ol>
+    <script src="calback.js"></script>
+    <button onclick="longProcessFunction(alertFunction)">
+      It is a long running process
+    </button>
+    <button>Alert</button>
+    <script type="text/javascript">
+      function longProcessFunction(alertFunction) {
+        setTimeout(() => {
+          var i = 0;
+          while (i < 9999999999) {
+            i += 1;
+          }
+          alert("Done!!!!");
+          alertFunction();
+        }, 1000);
+      }
+      function alertFunction() {
+        alert("Hi from ALERT function!!!!");
+      }
+    </script>
+  </body>
+</html>
