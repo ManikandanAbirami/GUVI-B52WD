@@ -4,7 +4,7 @@ function clickFunc() {
   allItems[0].setAttribute("class", "firstLi");
   allItems[1].style.backgroundColor = "lightcoral";
   allItems[0].value = 4;
-  allItems[0].innerText = "Manikandan Anbalagan";
+  allItems[0].innerText = "Manikandan Anbalagan Krishnan!!";
 }
 
 function changeFunc() {
