@@ -6,7 +6,7 @@ const getName = (cb) => {
   }, 2000);
 };
 
-let firstName = "Manikandan";
+let firstName = "Manikandan   ";
 let lastName = "Anbalagan";
 let gradute = "B E CS";
 
