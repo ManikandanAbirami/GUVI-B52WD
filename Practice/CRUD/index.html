@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Application</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mt-5">CRUD Application with JSONPlaceholder</h1>
+      <div id="postForm">
+        <input
+          type="text"
+          id="title"
+          class="form-control"
+          placeholder="Enter post title"
+          required
+        />
+        <textarea
+          id="body"
+          class="form-control mt-2"
+          placeholder="Enter post body"
+          required
+        ></textarea>
+        <button onclick="createPost()" class="btn btn-primary mt-3">
+          Add Post
+        </button>
+      </div>
+
+      <div id="posts" class="mt-5">
+        <!-- Posts will be added here dynamically -->
+      </div>
+
+      <!-- Pagination Controls -->
+      <div id="pagination" class="mt-3 text-center">
+        <!-- Pagination buttons will be added here dynamically -->
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

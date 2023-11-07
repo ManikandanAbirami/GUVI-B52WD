@@ -7,14 +7,14 @@
 //     );
 //   });
 
-async function fetchData() {
-  let response = await fetch(`https://restcountries.com/v3.1/name/France`);
+let url = "https://restcountries.com/v3.1/name/France";
+
+async function fetchData(urlParam) {
+  let response = await fetch(urlParam);
   let data = await response.json();
   let capital = data[0].capital[0];
   console.log("France capital:", capital);
 }
-
-fetchData();
 
 const fetchDataAsync = async () => {
   let response = await fetch(`https://restcountries.com/v3.1/name/France`);
