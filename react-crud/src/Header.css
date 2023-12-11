@@ -1,0 +1,10 @@
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: brown;
+    color: antiquewhite;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: x-large;
+    margin: 10px;
+}
