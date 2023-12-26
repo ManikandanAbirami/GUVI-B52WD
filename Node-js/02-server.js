@@ -1,6 +1,7 @@
 const express = require("express"); // Express is  replacement for the core http module ( Web Framework fro Node.js)
 const app = express();
 const queryString = require("querystring");
+const fs = require("fs");
 
 const port = 3000;
 
@@ -8,6 +9,16 @@ app.get("/", respondText);
 app.get("/json", respondJSON);
 app.get("/notFound", respondNotFound);
 app.get("/echo", respondEcho);
+app.get("/static/*", respondStatic);
+
+function respondStatic(req, res) {
+  console.log("Curent directory name: ", __dirname);
+  console.log("File name: ", req.url.split("/static"));
+  const fileName = `${__dirname}/public${req.url.split("/static")[1]}`;
+  fs.createReadStream(fileName)
+    .on("error", () => respondNotFound(req, res))
+    .pipe(res);
+}
 
 function respondEcho(req, res) {
   console.log("Query String:", req.url);
