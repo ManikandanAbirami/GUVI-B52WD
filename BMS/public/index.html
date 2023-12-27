@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Management System</title>
+  </head>
+  <body>
+    <h1>Book Management System</h1>
+    <h2>Add Book</h2>
+    <form id="addBookForm">
+      <input type="text" id="addTitle" placeholder="Title" required />
+      <input type="text" id="addAuthor" placeholder="Author" required />
+      <textarea
+        id="addDescription"
+        placeholder="Description"
+        required
+      ></textarea>
+      <button type="submit">Add Book</button>
+    </form>
+
+    <h2>Update Book</h2>
+    <form id="updateBookForm">
+      <input type="text" id="updateId" placeholder="Book ID" required />
+      <input type="text" id="updateTitle" placeholder="New Title" required />
+      <input type="text" id="updateAuthor" placeholder="New Author" required />
+      <textarea
+        id="updateDescription"
+        placeholder="New Description"
+        required
+      ></textarea>
+      <button type="submit">Update Book</button>
+    </form>
+
+    <h2>Books</h2>
+    <div id="books"></div>
+
+    <h2>Delete Book</h2>
+    <form id="deleteBookForm">
+      <input type="text" id="deleteId" placeholder="Book ID" required />
+      <button type="submit">Delete Book</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("addBookForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const title = document.getElementById("addTitle").value;
+          const author = document.getElementById("addAuthor").value;
+          const description = document.getElementById("addDescription").value;
+
+          fetch("/api/books", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ title, author, description }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Success:", data);
+              loadBooks();
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        });
+
+      document
+        .getElementById("updateBookForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const id = document.getElementById("updateId").value;
+          const title = document.getElementById("updateTitle").value;
+          const author = document.getElementById("updateAuthor").value;
+          const description =
+            document.getElementById("updateDescription").value;
+
+          fetch("/api/books/" + id, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ title, author, description }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Success:", data);
+              loadBooks();
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        });
+
+      document
+        .getElementById("deleteBookForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const id = document.getElementById("deleteId").value;
+
+          fetch("/api/books/" + id, {
+            method: "DELETE",
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Deleted:", data);
+              loadBooks();
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        });
+
+      function loadBooks() {
+        fetch("/api/books")
+          .then((response) => response.json())
+          .then((data) => {
+            const booksDiv = document.getElementById("books");
+            booksDiv.innerHTML = "";
+            data.forEach((book) => {
+              const bookDiv = document.createElement("div");
+              bookDiv.innerHTML = `<h3>${book.title}</h3><p>${book._id}</p><p>Author: ${book.author}</p><p>${book.description}</p>`;
+              booksDiv.appendChild(bookDiv);
+            });
+          });
+      }
+
+      loadBooks();
+    </script>
+  </body>
+</html>

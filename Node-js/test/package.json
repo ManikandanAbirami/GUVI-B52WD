@@ -1,18 +1,16 @@
 {
-  "name": "node",
+  "name": "test",
   "version": "1.0.0",
   "description": "",
-  "main": "01-server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.3",
-    "express": "^4.18.2",
     "nodemon": "^3.0.2"
   }
 }
