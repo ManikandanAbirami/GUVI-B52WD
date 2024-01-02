@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const booksRoute = require("./routes/books");
+require("dotenv").config();
 
 const app = express();
 
@@ -9,7 +10,7 @@ app.use(bodyParser.json()); //middleware
 
 //Connect to MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/bookdb", {
+  .connect(process.env.DB_HOST, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -20,5 +21,5 @@ app.use("/api/books", booksRoute);
 app.use(express.static("public"));
 
 // Start the server
-const port = 3000;
-app.listen(port, () => console.log("Listening on port 3000 ..."));
+// const port = 3000;
+app.listen(process.env.PORT, () => console.log("Listening on port 3000 ..."));
