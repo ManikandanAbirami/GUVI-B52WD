@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <h2>Dashboard</h2>
+    <% if(user) {%>
+    <p>Welcome, User <%= user.username%>!</p>
+    <p>Welcome, User <%= user.id%>!</p>
+    <p>Welcome, User <%= user.exp%>!</p>
+    <% } else { %>
+    <p>Access denied.</p>
+    <% } %>
+  </body>
+</html>
