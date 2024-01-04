@@ -59,7 +59,9 @@ router.put("/:id", async (req, res) => {
     }
 
     //Update the fields
-    if (date) appointment.date = date;
+    if (date) {
+      appointment.date = date;
+    }
     if (time) appointment.time = time;
     if (status) appointment.status = status;
 
